@@ -128,7 +128,7 @@ EOF
 }
 
 function enable_firewall() {
-  echo -e "Installing and setting up firewall to allow ingress on port ${YELLOW}$COIN_PORT${NC}"
+  echo -e "Installing and setting up firewall to allow ingress on port ${CYAN}$COIN_PORT${NC}"
   ufw allow $COIN_PORT/tcp comment "$COIN_NAME MN port" >/dev/null
   ufw allow ssh comment "SSH" >/dev/null 2>&1
   ufw limit ssh/tcp >/dev/null 2>&1
