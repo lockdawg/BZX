@@ -87,8 +87,8 @@ function create_config() {
   RPCUSER=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
   RPCPASSWORD=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w22 | head -n1)
   cat << EOF > $CONFIGFOLDER/$CONFIG_FILE
-rpcusername=XXXXXX
-rpcpassword=XXXXXXXXX
+rpcusername=
+rpcpassword=
 listen=1
 server=1
 maxconnections=32
