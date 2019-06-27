@@ -21,7 +21,7 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 function compile_node() {
-  echo -e "Preparing to download ${YELLOW}$COIN_NAME${NC}"
+  echo -e "Preparing to download ${CYAN}$COIN_NAME${NC}"
   mkdir bzx
   cd bzx
   wget -q $COIN_REPO
