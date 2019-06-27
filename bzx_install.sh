@@ -89,8 +89,8 @@ function create_config() {
   cat << EOF > $CONFIGFOLDER/$CONFIG_FILE
 listen=1
 server=1
-rpcuser=
-rpcpassword=
+#rpcuser=
+#rpcpassword=
 maxconnections=16
 EOF
 }
@@ -192,7 +192,7 @@ function checks() {
 }
 
 function prepare_system() {
-  echo -e "Preparing the system to install ${YELLOW}$COIN_NAME${NC} masternode."
+  echo -e "Preparing the system to install ${CYAN}$COIN_NAME${NC} masternode."
   echo -e "This might take 15-20 minutes and the screen will not move, so please be patient."
   apt-get update >/dev/null 2>&1
   DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
