@@ -1,34 +1,34 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-COIN_DAEMON='/usr/local/bin/GravityCoind'
-COIN_CLI='/usr/local/bin/GravityCoin-cli'
-COIN_REPO='https://github.com/GravityCoinOfficial/GravityCoin/releases/download/4.0.6.5/linux-x64.tar.gz'
-COIN_NAME='GXX'
-COIN_BS='hhttps://github.com/GravityCoinOfficial/GravityCoin/releases/download/Chainfiles/chainfiles.zip'
+COIN_DAEMON='/usr/local/bin/bitcoinzerod'
+COIN_CLI='/usr/local/bin/bitcoinzero-cli'
+COIN_REPO='https://github.com/BitcoinZeroOfficial/bitcoinzero/releases/download/5.0.2.1/linux-x64.tar.gz'
+COIN_NAME='BZX'
+COIN_BS='https://github.com/BitcoinZeroOfficial/bitcoinzero/releases/download/chainfiles/chainfiles.zip'
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
+CYAN='\033[0;36m'
 
 function update_node() {
   echo -e "Preparing to download ${YELLOW}$COIN_NAME${NC}"
-  mkdir gxx
-  cd gxx
+  mkdir bzx
+  cd bzx
   wget -q $COIN_REPO
   compile_error
   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
   tar xvf linux-x64.tar.gz
   compile_error
-  cp GravityCoin-cli /usr/local/bin
-  cp GravityCoind /usr/local/bin
+  cp bitcoinzero-cli /usr/local/bin
+  cp bitcoinzerod /usr/local/bin
   compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
-  chmod +x /usr/local/bin/GravityCoind
-  chmod +x /usr/local/bin/GravityCoin-cli
-  clear
+  chmod +x /usr/local/bin/bitcoinzerod
+  chmod +x /usr/local/bin/bitcoinzero-cli
   clear
 }
 
@@ -97,8 +97,8 @@ function important_information() {
  echo
  echo -e "================================================================================================================================"
  echo -e "$COIN_NAME Masternode is updated and running again!"
- echo -e "Start: ${RED}systemctl start $COIN_NAME.service${NC}"
- echo -e "Stop: ${RED}systemctl stop $COIN_NAME.service${NC}"
+ echo -e "Start: ${CYAN}systemctl start $COIN_NAME.service${NC}"
+ echo -e "Stop: ${CYAN}systemctl stop $COIN_NAME.service${NC}"
  echo -e "Please check ${RED}$COIN_NAME${NC} is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
  echo -e "================================================================================================================================"
 }
