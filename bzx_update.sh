@@ -3,7 +3,7 @@
 TMP_FOLDER=$(mktemp -d)
 COIN_DAEMON='/usr/local/bin/bitcoinzerod'
 COIN_CLI='/usr/local/bin/bitcoinzero-cli'
-COIN_REPO='https://github.com/BitcoinZeroOfficial/bitcoinzero/releases/download/5.0.2.1/linux-x64.tar.gz'
+COIN_REPO='https://github.com/BitcoinZeroOfficial/bitcoinzero/releases/download/5.0.3.1/linux-x64.tar.gz'
 COIN_NAME='BZX'
 COIN_BS='https://github.com/BitcoinZeroOfficial/bitcoinzero/releases/download/chainfiles/chainfiles.zip'
 
