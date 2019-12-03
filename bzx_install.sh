@@ -197,18 +197,18 @@ function checks() {
 function prepare_system() {
   echo -e "Preparing the system to install ${CYAN}$COIN_NAME${NC} masternode."
   echo -e "This might take 15-20 minutes and the screen will not move, so please be patient."
-  apt-get update >/dev/null 2>&1
-  DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
-  DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
-  apt install -y software-properties-common >/dev/null 2>&1
-  echo -e "${GREEN}Adding bitcoin PPA repository"
-  apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1
-  echo -e "Installing required packages, it may take some time to finish.${NC}"
-  apt-get update >/dev/null 2>&1
-  apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" make software-properties-common \
-  build-essential libtool autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev \
-  libboost-system-dev libboost-test-dev libboost-thread-dev sudo automake git wget curl libdb4.8-dev bsdmainutils libdb4.8++-dev \
-  libminiupnpc-dev libgmp3-dev unzip libzmq3-dev ufw pkg-config libevent-dev libdb5.3++>/dev/null 2>&1
+  #apt-get update >/dev/null 2>&1
+  #DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
+  #DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
+  #apt install -y software-properties-common >/dev/null 2>&1
+  #echo -e "${GREEN}Adding bitcoin PPA repository"
+  #apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1
+  #echo -e "Installing required packages, it may take some time to finish.${NC}"
+  #apt-get update >/dev/null 2>&1
+  #apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" make software-properties-common \
+  #build-essential libtool autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev \
+  #libboost-system-dev libboost-test-dev libboost-thread-dev sudo automake git wget curl libdb4.8-dev bsdmainutils libdb4.8++-dev \
+  #libminiupnpc-dev libgmp3-dev unzip libzmq3-dev ufw pkg-config libevent-dev libdb5.3++>/dev/null 2>&1
   if [ "$?" -gt "0" ];
     then
       echo -e "${RED}Not all required packages were installed properly. Try to install them manually by running the following commands:${NC}\n"
@@ -271,6 +271,6 @@ function setup_node() {
 clear
 
 #checks
-#prepare_system
+prepare_system
 compile_node
 setup_node
