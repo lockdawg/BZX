@@ -31,7 +31,7 @@ function compile_node() {
   compile_error
   cp bitcoinzero-cli /usr/local/bin
   cp bitcoinzerod /usr/local/bin
-  #compile_error
+  compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
@@ -259,7 +259,7 @@ function import_bootstrap() {
 function setup_node() {
   get_ip
   create_config
-  import_bootstrap
+  #import_bootstrap
   create_key
   update_config
   enable_firewall
@@ -271,6 +271,6 @@ function setup_node() {
 clear
 
 #checks
-#prepare_system
+prepare_system
 compile_node
 setup_node
