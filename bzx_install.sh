@@ -31,7 +31,7 @@ function compile_node() {
   compile_error
   cp bitcoinzero-cli /usr/local/bin
   cp bitcoinzerod /usr/local/bin
-  compile_error
+  #compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
